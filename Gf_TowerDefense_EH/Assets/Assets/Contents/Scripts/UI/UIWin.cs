@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIWin : MonoBehaviour
+public class UIWin : MonoBehaviour, IGameUI
 {
-    // Start is called before the first frame update
-    void Start()
+    public UIManager.GameUI UIType;
+
+    public UIManager.GameUI GetUIType()
     {
-        
+        return UIType;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Init()
     {
-        
+    }
+
+    public void SetActive(bool active)
+    {
+        gameObject.SetActive(active);
     }
 }

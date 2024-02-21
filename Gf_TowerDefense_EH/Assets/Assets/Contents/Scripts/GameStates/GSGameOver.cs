@@ -23,7 +23,7 @@ public class GSGameOver : IGameState
         {
             Debug.Log("Timer over");
             timer = 0;
-            GameStateManager.instance.SetCurrentGameState(GameStateManager.GameStates.MainMenu);
+            GameStateManager.instance.SetCurrentGameState(GameStateManager.GameStates.Loading);
         }
     }
 }

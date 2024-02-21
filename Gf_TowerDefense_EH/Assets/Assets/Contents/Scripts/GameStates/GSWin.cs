@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class GSWin : IGameState
 {
+    float timer;
     public void OnStateEnter()
     {
+        UIManager.instance.ShowUI(UIManager.GameUI.Win);
         Debug.Log("Hai vinto");
     }
 
@@ -15,5 +17,10 @@ public class GSWin : IGameState
 
     public void OnStateUpdate()
     {
+        timer += Time.deltaTime;
+        if(timer > 3)
+        {
+            GameStateManager.instance.SetCurrentGameState(GameStateManager.GameStates.Loading);
+        }
     }
 }

@@ -44,6 +44,8 @@ public class LevelController : MonoBehaviour
     int EscapedEnemy = 0;
     GameObject thisLevel;
     Transform thisLevelTransform;
+    GameObject enemy;
+    public bool LevelWonCheck = false;
     
 
     public void StartLevel()
@@ -64,6 +66,8 @@ public class LevelController : MonoBehaviour
 
     void Update()
     {
+        LevelState();
+
         if(GameStateManager.instance.currentGameState == GameStateManager.instance.registeredGameStates[GameStateManager.GameStates.GamePlay])
         {
             if (!isSpawning)
@@ -83,18 +87,6 @@ public class LevelController : MonoBehaviour
     {
         EscapedEnemy++;
         GameObject.Destroy(enemy);
-
-        if(enemyCount == currentWaveInfo.enemyCount)
-        {
-            currentWave++;
-            if(currentWave == levelWaves.Count)
-            {
-                isSpawning = false;
-                GameStateManager.instance.SetCurrentGameState(GameStateManager.GameStates.Win);
-                return;
-            }
-            StartWave(levelWaves[currentWave]);
-        }
     }
 
     void SpawnEnemy()
@@ -118,15 +110,36 @@ public class LevelController : MonoBehaviour
         if (enemyCount == currentWaveInfo.enemyCount)
         {
             isSpawning = false;
-
-        }
-            
+        } 
     }
 
-    public void LevelFailed()
+    void LevelState()
     {
-        LevelFailedCheck = false;
-        GameStateManager.instance.SetCurrentGameState(GameStateManager.GameStates.Gameover);
+        enemy = GameObject.FindWithTag("Enemy");
+        Debug.Log(currentWave);
+        Debug.Log(levelWaves.Count);
+
+        if(enemyCount == currentWaveInfo.enemyCount && currentWave < levelWaves.Count - 1)
+        {
+            currentWave++;
+            Debug.Log("One more wave!");
+            StartWave(levelWaves[currentWave]);
+        } 
+        if(enemy != null)
+        {
+            Debug.Log("There is at least one enemy on screen");
+        }
+        if(enemy == null && currentWave == levelWaves.Count - 1 || LevelWonCheck)
+        {
+            LevelWonCheck = false;
+            Debug.Log("Enemies are over!");
+            GameStateManager.instance.SetCurrentGameState(GameStateManager.GameStates.Win);
+        }
+        if(EscapedEnemy >= EnemyFailCount  ||  LevelFailedCheck)
+        {
+            LevelFailedCheck = false;
+            GameStateManager.instance.SetCurrentGameState(GameStateManager.GameStates.Gameover);
+        }
     }
 
     public void DestroyLevel()

@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &42133114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5468033532656821619, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
+  m_PrefabInstance: {fileID: 5929642415608019525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &92583422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6526214169436644757, guid: b3e44bfe93dd9154787234159925e90b, type: 3}
@@ -140,6 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d796927c0e5894086a7b73e31015d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &281385764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5468033532656821619, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
+  m_PrefabInstance: {fileID: 1244339734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &552886837
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400363496612548538, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
       propertyPath: m_text
-      value: Next Level
+      value: "Amazing Defense! \nCongratulations!"
       objectReference: {fileID: 0}
     - target: {fileID: 1400363496612548538, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
       propertyPath: m_fontColor.b
@@ -471,6 +481,14 @@ PrefabInstance:
     - target: {fileID: 5468033532656821619, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674751937236382088, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674751937236382088, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 7905877968591550529, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
       propertyPath: m_Pivot.x
@@ -555,13 +573,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5468033532656821619, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1244339737}
   m_SourcePrefab: {fileID: 100100000, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
 --- !u!224 &1244339735 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7905877968591550529, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
   m_PrefabInstance: {fileID: 1244339734}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1244339737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281385764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18cc0edf2b027314e8cd8dd2245e631b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIType: 5
 --- !u!1 &1255052804
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +630,7 @@ MonoBehaviour:
   levels:
   - {fileID: 5960434589671734519, guid: 97eaa68381f7bd4439e38ee449957d72, type: 3}
   levelGameObject: {fileID: 0}
-  startingState: 0
+  startingState: 2
 --- !u!4 &1255052806
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,6 +1174,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 552886841}
     m_Modifications:
+    - target: {fileID: 1400363496612548538, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
+      propertyPath: m_text
+      value: 'No Worries!
+
+        Back to Planning!'
+      objectReference: {fileID: 0}
     - target: {fileID: 5468033532656821619, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
       propertyPath: m_Name
       value: GameOverUI
@@ -1147,6 +1187,14 @@ PrefabInstance:
     - target: {fileID: 5468033532656821619, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674751937236382088, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674751937236382088, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7905877968591550529, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
       propertyPath: m_Pivot.x
@@ -1231,13 +1279,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5468033532656821619, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5929642415608019528}
   m_SourcePrefab: {fileID: 100100000, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
 --- !u!224 &5929642415608019526 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7905877968591550529, guid: 26305dbb5bd3abd47a99a1f43f2a1be8, type: 3}
   m_PrefabInstance: {fileID: 5929642415608019525}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5929642415608019528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42133114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e8a6e3fb9eaa94fa176c0295f551c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIType: 4
 --- !u!1001 &6191631802675064245
 PrefabInstance:
   m_ObjectHideFlags: 0
