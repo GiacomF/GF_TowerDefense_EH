@@ -1,14 +1,17 @@
-using System.Collections;
+
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
 
     public List<LevelController> levels;
-
-    public GameObject levelGameObject;
+    public TMP_Text coinsAvailable;
+    public TMP_Text SpawnedEnemiesNumber;
+    public TMP_Text TotalEnemiesNumber;
 
     //1 Make it a singleton
     public static GameManager instance
@@ -57,6 +60,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Debug.Log(GameStateManager.instance.currentGameState);
+        if(GameObject.FindAnyObjectByType<LevelController>() != null)
+        {
+            coinsAvailable.text = LevelController.instance.CoinsAvailable.ToString();
+            SpawnedEnemiesNumber.text = LevelController.instance.AlreadySpawnedEnemies.ToString();
+            TotalEnemiesNumber.text = LevelController.instance.TotalEnemies.ToString();
+        }
     }
 
     public void DestroyLevel()

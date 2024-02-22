@@ -27,7 +27,8 @@ public class UIManager : MonoBehaviour
         MainMenu,
         Options,
         Gameover,
-        Win
+        Win,
+        GamePlay
     }
 
     private Dictionary<GameUI, IGameUI> registeredUIs = new Dictionary<GameUI, IGameUI>();

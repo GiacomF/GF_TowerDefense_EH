@@ -46,10 +46,14 @@ public class LevelController : MonoBehaviour
     Transform thisLevelTransform;
     GameObject enemy;
     public bool LevelWonCheck = false;
+    public int CoinsAvailable = 15;
+    public int AlreadySpawnedEnemies;
+    public int TotalEnemies;
     
 
     public void StartLevel()
     {
+        TotalEnemies = levelWaves[0].enemyCount + levelWaves[1].enemyCount + levelWaves[2].enemyCount;
         StartWave(levelWaves[0]);
         thisLevel = gameObject;
         thisLevelTransform = gameObject.transform;
@@ -66,6 +70,8 @@ public class LevelController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(CoinsAvailable);
+        Debug.Log(TotalEnemies);
         LevelState();
 
         if(GameStateManager.instance.currentGameState == GameStateManager.instance.registeredGameStates[GameStateManager.GameStates.GamePlay])
@@ -107,6 +113,7 @@ public class LevelController : MonoBehaviour
         enemyMover.stopRadiusSqr = 0.3f;
 
         enemyCount++;
+        AlreadySpawnedEnemies++;
         if (enemyCount == currentWaveInfo.enemyCount)
         {
             isSpawning = false;
@@ -140,6 +147,12 @@ public class LevelController : MonoBehaviour
             LevelFailedCheck = false;
             GameStateManager.instance.SetCurrentGameState(GameStateManager.GameStates.Gameover);
         }
+    }
+
+    public void AddCoins()
+    {
+        CoinsAvailable += 5;
+        Debug.Log("More Coins!");
     }
 
     public void DestroyLevel()

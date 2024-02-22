@@ -133,12 +133,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   Range: 7
-  Firerate: 1
+  Firerate: 0.5
   EnenmyTag: Enemy
   RotationSpeed: 20
   PartToRotate: {fileID: 7651416460140287982}
   bulletPrefab: {fileID: 6822328262418121030, guid: 8a59342ed2c1a074b8f7d3884e298cce, type: 3}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 3251450879624106045}
 --- !u!1 &3784325513458956164
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3251450879624106045}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
