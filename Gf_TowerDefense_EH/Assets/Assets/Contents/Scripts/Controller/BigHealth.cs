@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NigHealth : MonoBehaviour
+public class BigHealth : MonoBehaviour
 {
     public int health = 4;
     void Update()
